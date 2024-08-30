@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <title>A Aventura dos Mistérios Submersos</title>
+</head>
+
+<body>
+    <main>
+        <div class="passo ativo" id="passo-0">
+            <img src="atlantis_3_0.jpg" alt="Diário antigo encontrado">
+            <p>Enquanto limpava o sótão de casa, você encontra um antigo diário de bordo, cheio de anotações sobre uma
+                civilização submersa perdida no fundo do oceano. O diário contém pistas sobre onde começar a busca. Para
+                onde você decide ir?</p>
+            <button class="btn-proximo" data-proximo="1">Explorar a Ilha de Páscoa</button>
+            <button class="btn-proximo" data-proximo="2">Investigar as Ilhas Galápagos</button>
+        </div>
+        <div class="passo" id="passo-1">
+            <p>Na Ilha de Páscoa, você encontra uma inscrição misteriosa em uma das estátuas moai. Ela menciona que a
+                próxima pista está no meio do Oceano Pacífico.</p>
+            <button class="btn-proximo" data-proximo="3">Navegar até o ponto indicado</button>
+            <button class="btn-proximo" data-proximo="4">Voltar e investigar outras pistas</button>
+        </div>
+        <div class="passo" id="passo-2">
+            <p>Nas Ilhas Galápagos, você descobre um antigo artefato submerso que leva a um mapa antigo com uma
+                referência a uma área desconhecida no Oceano Atlântico. Qual o próximo passo?</p>
+            <button class="btn-proximo" data-proximo="5">Siga o mapa para o Atlântico</button>
+            <button class="btn-proximo" data-proximo="6">Explorar mais as Galápagos</button>
+        </div>
+        <div class="passo" id="passo-3">
+            <p>Seguindo a navegação, você encontra uma ilha misteriosa no meio do Oceano Pacífico, onde uma nova pista
+                revela a necessidade de viajar até o Caribe.</p>
+            <button class="btn-proximo" data-proximo="7">Viajar para o Caribe</button>
+        </div>
+
+        <div class="passo" id="passo-4">
+            <img src="atlantis_3_0.jpg" alt="Imagem de desistência">
+            <p>Decidido a não arriscar mais, você retorna para casa. Embora a aventura tenha sido interrompida, você
+                continua a sonhar com o que poderia ter encontrado.</p>
+        </div>
+
+        <div class="passo" id="passo-5">
+            <p>O mapa leva você a um antigo naufrágio no Caribe. Lá, você encontra uma entrada para uma cidade submersa.
+            </p>
+            <button class="btn-proximo" data-proximo="8">Explorar a cidade submersa</button>
+        </div>
+
+        <div class="passo" id="passo-6">
+            <p>Explorando mais as Galápagos, você encontra um outro artefato que leva a uma entrada secreta na própria
+                ilha.</p>
+            <button class="btn-proximo" data-proximo="9">Investigar a entrada secreta</button>
+        </div>
+
+        <div class="passo" id="passo-7">
+            <p>No Caribe, você se depara com uma entrada para uma caverna submarina. Um enigma está inscrito na entrada.
+                O que você faz?</p>
+            <button class="btn-proximo" data-proximo="10">Decifrar o enigma</button>
+            <button class="btn-proximo" data-proximo="11">Voltar e explorar outros caminhos</button>
+        </div>
+
+        <div class="passo" id="passo-8">
+            <p>Dentro da cidade submersa, você encontra relíquias antigas e informações sobre uma civilização avançada
+                que desapareceu misteriosamente.</p>
+            <img src="atlantis_3_0.jpg" alt="Cidade submersa">
+            <p>Você decide ficar para estudar e preservar esse incrível achado.</p>
+        </div>
+
+        <div class="passo" id="passo-9">
+            <p>Investigando a entrada secreta, você descobre um sistema de cavernas subaquáticas que leva a um grande
+                mistério sobre a civilização perdida.</p>
+            <button class="btn-proximo" data-proximo="8">Explorar mais</button>
+        </div>
+
+        <div class="passo" id="passo-10">
+            <p>Decifrando o enigma, você descobre um portal que leva a um novo local com pistas adicionais para entender
+                a civilização submersa.</p>
+            <button class="btn-proximo" data-proximo="12">Seguir para o novo local</button>
+        </div>
+
+        <div class="passo" id="passo-11">
+            <p>Ao voltar e explorar outros caminhos, você acaba encontrando novas pistas que levam novamente à cidade
+                submersa.</p>
+            <button class="btn-proximo" data-proximo="8">Explorar a cidade submersa</button>
+        </div>
+
+        <div class="passo" id="passo-12">
+            <p>No novo local, você encontra detalhes finais sobre a civilização submersa, revelando sua incrível
+                história e contribuições para a humanidade.</p>
+            <img src="atlantis_3_0.jpg" alt="Descoberta final">
+            <p>Você se dedica a compartilhar e preservar esse conhecimento para o futuro.</p>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+const avanca = document.querySelectorAll('.btn-proximo');
+
+avanca.forEach(button => {
+    button.addEventListener('click', function(){
+        const atual = document.querySelector('.ativo');
+        const proximoPasso = 'passo-' + this.getAttribute('data-proximo');
+
+        atual.classList.remove('ativo');
+        document.getElementById(proximoPasso).classList.add('ativo');
+    })
+})
+
+body {
+    background-color: #1858bf;
+    color: white;
+    font-family: "Bai Jamjuree", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    margin: 0;
+}
+
+button {
+    background-color: #2388e7;
+    color: white;
+    font-family: "Bai Jamjuree", sans-serif;
+}
+
+.passo {
+    display: none;
+}
+
+.passo.ativo {
+    display:block;
+}
+
+main {
+    text-align: center;
+    max-width: 90%;
+}
+
+img {
+    max-width: 90%;
+}
